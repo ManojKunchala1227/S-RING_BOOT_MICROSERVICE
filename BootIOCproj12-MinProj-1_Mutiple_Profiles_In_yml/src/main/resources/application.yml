@@ -1,0 +1,52 @@
+spring:
+  application:
+    name: BootIOCproj03-MinProj-1_LayeredApp
+
+
+---
+#Oracle DataSource Configuration
+
+
+spring:
+  config:
+    activate:
+      on-profile: dev 
+      
+      
+  datasource:
+    dbcp2:
+      driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521:orcl
+    username: SPBM
+    password: 1234
+    
+    
+---
+
+
+
+#MYSQL DataSource Configuration
+Spring:
+  config:
+    activate:
+       on-profile: mysql
+    
+  datasource:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/spbm
+      username: root
+      password: Manoj1234
+
+---
+Spring:
+  profiles:
+    active: mysql
+---
+#-D:
+ #spring:
+  #profile:
+   #active: mysql
+ 
+ 
+ 
+ 
